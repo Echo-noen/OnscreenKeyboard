@@ -1,0 +1,154 @@
+:root {
+  --bg: #0f0f0f;
+  --c: #f7eded;
+  --b: #d46666;
+  
+  --w: 2em;
+
+}
+
+* {
+  box-sizing: border-box;
+  -webkit-app-region: drag;
+}
+
+body {
+  margin: 0;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+  font-family: monospace;
+
+  background-color: transparent;
+  color: var(--c);
+  display: flex;
+  justify-content: center;
+}
+
+ #keyboardContainer::before {
+  content: "";
+  background-color: var(--b);
+
+  border-radius: 15px;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  z-index: -1;
+  top: 20px;
+}
+#keyboardContainer {
+  position:absolute;
+  bottom: 90px;
+  font-size: 2em;
+  animation: show 0.8s ease 1 forwards, bob 5s 1s infinite ;
+}
+#keyboard {
+  position: relative;
+  user-select: none;
+  border: var(--b) solid 2px;
+  border-radius: 15px;
+  background-color: var(--bg);
+  padding: 5px;
+  padding-top: 15px;
+  z-index: 0;
+}
+#keyboardContent {
+  display: grid;
+  grid-template-rows: 2em 2em 2em 2em 2em;
+}
+#keyboardContent > div {
+  display: grid;
+}
+
+key {
+  position: relative;
+  bottom: 10px;
+
+  font-size: 0.75em;
+  background-color: var(--bg);
+  border: var(--b) solid 2px;
+  border-radius: 10px;
+  margin: 5px;
+  padding: 2px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+
+
+  transition: bottom 0.1s ease;
+}
+
+key:hover {
+  bottom: 8px
+}
+
+key.active {
+  bottom: 2px;
+}
+
+key::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+  background-color: var(--b);
+  border: var(--b) solid 2px;
+  border-radius: 10px;
+  bottom: -10px;
+  transition: bottom 0.1s ease;
+}
+
+key:hover::before {
+  bottom: -8px;
+}
+
+key.active::before {
+  bottom: -2px;
+}
+
+#text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  user-select: none;
+  text-align: center;
+  width: 800px;
+}
+
+
+#numRow {
+  grid-template-columns: 2em 2em 2em 2em 2em 2em 2em 2em 2em 2em 2em 2em 2em 2.5em ;
+}
+#oneRow {
+  grid-template-columns: 2.25em 2em 2em 2em 2em 2em 2em 2em 2em 2em 2em 2em 2em 2.25em ;
+}
+#twoRow {
+  grid-template-columns: 3.25em 2em 2em 2em 2em 2em 2em 2em 2em 2em 2em 2em 3.25em ;
+}
+#threeRow {
+  grid-template-columns: 4.25em 2em 2em 2em 2em 2em 2em 2em 2em 2em 2em 4.25em ;
+}
+#btmRow {
+  grid-template-columns: 2.5em 2em 2em 1fr 3.4em 2em 2em 2.5em ;
+}
+
+@keyframes show {
+  from {
+    bottom: -100%;
+  }
+  to {
+    bottom: 80px;
+  }
+}
+
+@keyframes bob {
+  0%, 100% {
+    bottom: 80px;
+  }
+  50% {
+    bottom: 60px;
+  }
+}

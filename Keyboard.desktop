@@ -1,0 +1,7 @@
+#!/usr/bin/env xdg-open
+[Desktop Entry]
+Name=Keyboard
+Comment=Run npm test and handholder.py for the on screen keyboard
+Exec=/home/echo/src/OnscreenKeyboard/runAll.sh
+Terminal=false
+Type=Application
