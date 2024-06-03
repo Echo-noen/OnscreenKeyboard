@@ -133,4 +133,4 @@ dist
 pyvenv.cfg
 runAll.sh
 python/
-.desktop
+Keyboard.desktop
