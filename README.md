@@ -8,9 +8,9 @@ Also this only works for the italian keyboard layout. Why you ask? Because it's 
 Up until 10 minutes ago there were a lot of bugs regarding the shift keys and their behavior with pressing animation/state of both the keys themselves and the keys that were modified by the keypress. I do not guarantee this version is bug free.
 
 Other things:
-[] ALT GR button does not work (python sends 'null' when pressed and idk why)
-[] Super key also doesn't work but I feel like that's a bit more understandable
-[] May be a me thing but fn also didn't want to work
+- [] ALT GR button does not work (python sends 'null' when pressed and idk why)
+- [] Super key also doesn't work but I feel like that's a bit more understandable
+- [] May be a me thing but fn also didn't want to work
 
 ### Why did I decide to make a keylogger (and by make I mean steal the code from my friends)
 Because iohook/iohook2/node-global-key-listener would not for some reason??? And I really wanted to make this work even if you were not focused on the app so there.
