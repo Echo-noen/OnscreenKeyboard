@@ -1,7 +1,7 @@
 # OnscreenKeyboard
 A really bad electron app that shows an on-screen keyboard because my brain likes the animations.
 
-![A video showing me using the app.](https://files.catbox.moe/sjqp5w.mp4)
+[![A video showing me using the app.](ONSCREENTEST.gif)](ONSCREENTEST.gif)
 
 ### Why you should not use it (or at least, why you should change the code if you want to use it)
 I may not know anything about software engineering or cybersecurity, but having a python script that acts as basically a keylogger just screams spyware.
