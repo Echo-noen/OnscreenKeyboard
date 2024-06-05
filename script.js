@@ -60,7 +60,8 @@ const keyMap = {
   "Space": "space",
   "AltRight": "alt_r",
   "IntlBackslash": "<",
-  "ControlRight": "ctrl_r"
+  "ControlRight": "ctrl_r",
+  "None": null
 }
 
 const shiftedMap = {
@@ -122,7 +123,8 @@ const shiftedMap = {
   "Space": "space",
   "AltRight": "alt_r",
   "IntlBackslash": ">",
-  "ControlRight": "ctrl_r"
+  "ControlRight": "ctrl_r",
+  "None": null
 }
 
 let usedMap = keyMap;
@@ -157,7 +159,7 @@ document.addEventListener("keydown", (e) => {
   if (e.code === 'ShiftRight' || e.code === 'ShiftLeft') {
     shiftPressed = true;
     updateKeys('alt');
-  } else if (e.code === 'AltRight') {
+  } else if (e.code === 'None') {
     altPressed = true;
     updateKeys('gr');
   }
@@ -175,7 +177,7 @@ document.addEventListener("keyup", (e) => {
 
   if (e.code === 'ShiftRight' || e.code === 'ShiftLeft') {
     shiftPressed = false;
-  } else if (e.code === 'AltRight') {
+  } else if (e.code === 'None') {
     altPressed = false;
   }
 
