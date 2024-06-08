@@ -87,6 +87,10 @@ key.active {
   bottom: 2px;
 }
 
+.active {
+  font-weight: bolder;
+}
+
 key::before {
   content: "";
   position: absolute;
