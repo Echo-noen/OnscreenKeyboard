@@ -1,5 +1,4 @@
 const keys = document.querySelectorAll('key');
-const textarea = document.getElementById('textarea');
 
 const keyMap = {
   "Backquote": "\\",
@@ -56,6 +55,7 @@ const keyMap = {
   "Slash": "-",
   "ShiftRight": "shift_r",
   "ControlLeft": "ctrl",
+  "cmd": "cmd",
   "AltLeft": "alt",
   "Space": "space",
   "AltRight": "alt_r",
@@ -119,6 +119,7 @@ const shiftedMap = {
   "Slash": "?",
   "ShiftRight": "shift_r",
   "ControlLeft": "ctrl",
+  "cmd": "cmd",
   "AltLeft": "alt",
   "Space": "space",
   "AltRight": "alt_r",
@@ -135,9 +136,8 @@ function updateMap() {
   if (!shiftPressed) {
     usedMap = keyMap;
   } else {
-    usedMap = shiftedMap
+    usedMap = shiftedMap;
   }
-  // console.log(usedMap);
 }
 
 keys.forEach(key => {
@@ -145,53 +145,65 @@ keys.forEach(key => {
 });
 
 document.addEventListener("keydown", (e) => {
-  updateMap();
   e.preventDefault();
   const keyCode = e.code;
 
-  const keyElements = document.querySelectorAll(`key[kid="${keyCode}"]`)
-  
+  if (keyCode === 'ShiftRight' || keyCode === 'ShiftLeft') {
+    shiftPressed = true;
+    updateKeys();
+  } else if (keyCode === 'None') {
+    altPressed = true;
+    updateKeys();
+  }
 
+  const keyElements = document.querySelectorAll(`key[kid="${keyCode}"]`);
   keyElements.forEach(keyElement => {
     keyElement.classList.add('active');
   });
 
-  if (e.code === 'ShiftRight' || e.code === 'ShiftLeft') {
-    shiftPressed = true;
-    updateKeys('alt');
-  } else if (e.code === 'None') {
-    altPressed = true;
-    updateKeys('gr');
-  }
-  
+  updateMap();
 });
 
 document.addEventListener("keyup", (e) => {
-  updateMap();
   const keyCode = e.code;
-  const keyElement = document.querySelector(`key[kid="${keyCode}"]`);
 
+  if (keyCode === 'ShiftRight' || keyCode === 'ShiftLeft') {
+    shiftPressed = false;
+  } else if (keyCode === 'None') {
+    altPressed = false;
+  }
+
+  const keyElement = document.querySelector(`key[kid="${keyCode}"]`);
   if (keyElement) {
     keyElement.classList.remove('active');
   }
 
-  if (e.code === 'ShiftRight' || e.code === 'ShiftLeft') {
-    shiftPressed = false;
-  } else if (e.code === 'None') {
-    altPressed = false;
-  }
-
-  if (!shiftPressed && !altPressed) {
-    resetKeys();
-  }
+  updateKeys();
+  updateMap();
 });
 
-function updateKeys(attribute) {
-  keys.forEach(key => {
-    if (key.hasAttribute(attribute)) {
-      key.innerHTML = key.getAttribute(attribute);
-    }
-  });
+function updateKeys() {
+  if (shiftPressed && altPressed) {
+    keys.forEach(key => {
+      if (key.hasAttribute('sup')) {
+        key.innerHTML = key.getAttribute('sup');
+      }
+    });
+  } else if (shiftPressed) {
+    keys.forEach(key => {
+      if (key.hasAttribute('alt')) {
+        key.innerHTML = key.getAttribute('alt');
+      }
+    });
+  } else if (altPressed) {
+    keys.forEach(key => {
+      if (key.hasAttribute('gr')) {
+        key.innerHTML = key.getAttribute('gr');
+      }
+    });
+  } else {
+    resetKeys();
+  }
 }
 
 function resetKeys() {
@@ -208,16 +220,10 @@ function getKeyByValue(object, value) {
   return key;
 }
 
-
 window.electronAPI.onExternalEvent((event, data) => {
-  updateMap()
-  
+  updateMap();
   var parsedData = getKeyByValue(usedMap, data.key);
   console.log('data.key:', data.key);
-
-  // if (parsedData in usedMap) {
-    // console.log(parsedData)
-  // }
 
   const keyEvent = new KeyboardEvent(data.type, {
     key: data.key,

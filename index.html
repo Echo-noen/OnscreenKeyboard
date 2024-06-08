@@ -9,69 +9,76 @@
   <link rel="stylesheet" href="style.css">
 </head>
 
+<!-- 
+kid == JavaScript ID for the key
+alt == key for SHIFT
+gr == key for ALT GR
+sup == key for SHIFT ALT
+ -->
+
 <body>
   <div id="keyboardContainer">
     <div id="keyboard">
       <div id="keyboardContent">
         <div id="numRow">
-          <key kid="Backquote" alt="|" gr="¬">\</key>
-          <key kid="Digit1" alt="!" gr="¹">1</key>
-          <key kid="Digit2" alt="&#34;" gr="²">2</key>
-          <key kid="Digit3" alt="£"  gr="³">3</key>
-          <key kid="Digit4" alt="$" gr="¼">4</key>
-          <key kid="Digit5" alt="%" gr="½">5</key>
-          <key kid="Digit6" alt="&" gr="¬">6</key>
-          <key kid="Digit7" alt="/" gr="{">7</key>
-          <key kid="Digit8" alt="(" gr="[">8</key>
-          <key kid="Digit9" alt=")" gr="]">9</key>
-          <key kid="Digit0" alt="=" gr="}">0</key>
-          <key kid="Minus" alt="?"  gr="`">'</key>
-          <key kid="Equal" alt="^"  gr="~">Ì</key>
+          <key kid="Backquote" alt="|" gr="¬" sup="¦">\</key>
+          <key kid="Digit1" alt="!" gr="¹" sup="¡">1</key>
+          <key kid="Digit2" alt="&#34;" gr="²" sup="">2</key>
+          <key kid="Digit3" alt="£" gr="³" sup="~">3</key>
+          <key kid="Digit4" alt="$" gr="¼" sup="⅛">4</key>
+          <key kid="Digit5" alt="%" gr="½" sup="⅜">5</key>
+          <key kid="Digit6" alt="&" gr="¬" sup="⅝">6</key>
+          <key kid="Digit7" alt="/" gr="{" sup="⅞">7</key>
+          <key kid="Digit8" alt="(" gr="[" sup="™">8</key>
+          <key kid="Digit9" alt=")" gr="]" sup="±">9</key>
+          <key kid="Digit0" alt="=" gr="}" sup="˛">0</key>
+          <key kid="Minus" alt="?"  gr="`" sup="¿">'</key>
+          <key kid="Equal" alt="^"  gr="~" sup="^">Ì</key>
           <key kid="Backspace">←</key>
         </div>
         <div id="oneRow">
           <key kid="Tab">⇄</key>
-          <key kid="KeyQ" gr="@">Q</key>
-          <key kid="KeyW" gr="ſ">W</key>
-          <key kid="KeyE" gr="€">E</key>
-          <key kid="KeyR" gr="¶">R</key>
-          <key kid="KeyT" gr="ŧ">T</key>
-          <key kid="KeyY" gr="←">Y</key>
-          <key kid="KeyU" gr="↓">U</key>
-          <key kid="KeyI" gr="→">I</key>
-          <key kid="KeyO" gr="ø">O</key>
-          <key kid="KeyP" gr="Þ">P</key>
-          <key kid="BracketLeft" alt="É" gr="[">È</key>
-          <key kid="BracketRight" alt="*" gr="]">+</key>
-          <key kid="Backslash" alt="§">Ù</key>
+          <key kid="KeyQ" alt="Q" gr="@" sup="Ω">Q</key>
+          <key kid="KeyW" alt="W" gr="ſ" sup="§">W</key>
+          <key kid="KeyE" alt="E" gr="€" sup="¢">E</key>
+          <key kid="KeyR" alt="R" gr="¶" sup="®">R</key>
+          <key kid="KeyT" alt="T" gr="ŧ" sup="Ŧ">T</key>
+          <key kid="KeyY" alt="Y" gr="←" sup="¥">Y</key>
+          <key kid="KeyU" alt="U" gr="↓" sup="↑">U</key>
+          <key kid="KeyI" alt="I" gr="→" sup="ı">I</key>
+          <key kid="KeyO" alt="O" gr="ø" sup="Ø">O</key>
+          <key kid="KeyP" alt="P" gr="Þ" sup="Þ">P</key>
+          <key kid="BracketLeft" alt="É" gr="[" sup="{">È</key>
+          <key kid="BracketRight" alt="*" gr="]" sup="}">+</key>
+          <key kid="Backslash" alt="§" gr="`" sup="˘">Ù</key>
         </div>
         <div id="twoRow">
           <key kid="CapsLock">⇬</key>
-          <key kid="KeyA" gr="Æ">A</key>
-          <key kid="KeyS" gr="ẞ">S</key>
-          <key kid="KeyD" gr="Ð">D</key>
-          <key kid="KeyF" gr="đ">F</key>
-          <key kid="KeyG" gr="Ŋ">G</key>
-          <key kid="KeyH" gr="Ħ">H</key>
-          <key kid="KeyJ" gr="ˀ">J</key>
-          <key kid="KeyK" gr="ĸ">K</key>
-          <key kid="KeyL" gr="Ł">L</key>
-          <key kid="Semicolon" alt="Ç" gr="@">Ò</key>
-          <key kid="Quote" alt="°" gr="#">À</key>
+          <key kid="KeyA" alt="A" gr="Æ" sup="Æ">A</key>
+          <key kid="KeyS" alt="S" gr="ẞ" sup="ẞ">S</key>
+          <key kid="KeyD" alt="D" gr="Ð" sup="Ð">D</key>
+          <key kid="KeyF" alt="F" gr="đ" sup="ª">F</key>
+          <key kid="KeyG" alt="G" gr="Ŋ" sup="Ŋ">G</key>
+          <key kid="KeyH" alt="H" gr="Ħ" sup="Ħ">H</key>
+          <key kid="KeyJ" alt="J" gr="ˀ" sup="̛">J</key>
+          <key kid="KeyK" alt="K" gr="ĸ" sup="&">K</key>
+          <key kid="KeyL" alt="L" gr="Ł" sup="Ł">L</key>
+          <key kid="Semicolon" alt="Ç" gr="@" sup="¸">Ò</key>
+          <key kid="Quote" alt="°" gr="#" sup="°">À</key>
           <key kid="Enter">↵</key>
         </div>
         <div id="threeRow">
           <key kid="ShiftLeft">⇧</key>
-          <key kid="KeyZ" gr="«">Z</key>
-          <key kid="KeyX" gr="»">X</key>
-          <key kid="KeyC" gr="¢">C</key>
-          <key kid="KeyV" gr="“">V</key>
-          <key kid="KeyB" gr="”">B</key>
-          <key kid="KeyN" gr="Ñ">N</key>
-          <key kid="KeyM" gr="µ">M</key>
-          <key kid="Comma" alt=";">,</key>
-          <key kid="Period" alt=":">.</key>
-          <key kid="Slash" alt="_">-</key>
+          <key kid="KeyZ" alt="Z" gr="«" sup="<">Z</key>
+          <key kid="KeyX" alt="X" gr="»" sup=">">X</key>
+          <key kid="KeyC" alt="C" gr="¢" sup="©">C</key>
+          <key kid="KeyV" alt="V" gr="“" sup="‘">V</key>
+          <key kid="KeyB" alt="B" gr="”" sup="’">B</key>
+          <key kid="KeyN" alt="N" gr="Ñ" sup="Ñ">N</key>
+          <key kid="KeyM" alt="M" gr="µ" sup="º">M</key>
+          <key kid="Comma" alt=";" gr="´" sup="×">,</key>
+          <key kid="Period" alt=":" gr="·" sup="¨">.</key>
+          <key kid="Slash" alt="_" gr="¯" sup="÷">-</key>
           <key kid="ShiftRight">⇧</key>
         </div>
         <div id="btmRow">
@@ -81,7 +88,7 @@
           <key kid="Space"> </key>
           <key kid="None">ALT GR</key>
           <key>FN</key>
-          <key kid="IntlBackslash" alt="&#62;">&#60;</key>
+          <key kid="IntlBackslash" alt="&#62;" gr="«" sup="»">&#60;</key>
           <key kid="ControlRight">CTRL</key>
         </div>
       </div>
