@@ -8,10 +8,8 @@ const createWindow = () => {
     transparent: true,
     frame: false,
     fullscreen: false,
-    // width: 1560,
-    // height: 370,
-    width: 760,
-    height: 370,
+    width: 755,
+    height: 315,
 
     webPreferences: {
       preload: path.join(__dirname, 'preload.js')
@@ -77,4 +75,3 @@ app.on('window-all-closed', () => {
     app.quit();
   }
 });
-
