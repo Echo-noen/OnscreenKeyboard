@@ -2,6 +2,8 @@ const { app, BrowserWindow, ipcMain, screen} = require('electron');
 const path = require('path');
 const net = require('net');
 
+app.disableHardwareAcceleration();
+
 
 const createWindow = () => {
   const primaryDisplay = screen.getPrimaryDisplay();
